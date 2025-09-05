@@ -1,0 +1,25 @@
+proxies:
+  - name: Candra1
+    server: 172.66.144.39
+    port: 443
+    type: trojan
+    password: 4928e60d-f31f-4c89-becf-19fe3640a472
+    skip-cert-verify: true
+    sni: do3.stbvpn.xyz
+    network: ws
+    ws-opts:
+      path: /trojan
+      headers:
+        Host: do3.stbvpn.xyz
+    udp: true
+  - name: Candra2
+    server: 172.66.144.39
+    port: 443
+    type: trojan
+    password: 4928e60d-f31f-4c89-becf-19fe3640a472
+    skip-cert-verify: true
+    sni: do3.stbserver.xyz
+    network: grpc
+    grpc-opts:
+      grpc-service-name: trojan-service
+    udp: true
